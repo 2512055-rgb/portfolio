@@ -4,15 +4,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><あなたの名前> のポートフォリオ</title>
+
+    <!-- Google Fonts（美しいフォントの読み込み） -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- 全体のリセット＆背景デザイン --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #0b0c10;
+            /* 上品なアンビエントグラデーションライト */
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(120, 80, 255, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(255, 185, 0, 0.1) 0%, transparent 40%);
+            color: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* --- 中央のメインカード（すりガラス効果） --- */
+        .container {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 50px 40px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        /* --- タイトル（ゴールド〜輝きのグラデーション文字） --- */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #ffffff 0%, #ffd700 60%, #ff9900 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.05em;
+        }
+
+        /* --- 一言説明（サブテキスト） --- */
+        .subtitle {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            margin-bottom: 36px;
+            line-height: 1.6;
+        }
+
+        /* --- 見出し（このサイトについて） --- */
+        h2 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* 見出しの下線アクセント */
+        h2::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, #ffd700, transparent);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- リンクメニュー（ボタン風カード） --- */
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        li a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            color: #f8fafc;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* 右側に自動追加される矢印マーク */
+        li a::after {
+            content: '→';
+            font-size: 1.1rem;
+            color: #ffd700;
+            transition: transform 0.3s ease;
+        }
+
+        /* --- マウスホバー時の豪華なエフェクト --- */
+        li a:hover {
+            background: rgba(255, 215, 0, 0.1);
+            border-color: rgba(255, 215, 0, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.15);
+        }
+
+        li a:hover::after {
+            transform: translateX(6px);
+        }
+
+        /* --- スマホ表示用レスポンシブ --- */
+        @media (max-width: 480px) {
+            .container {
+                padding: 36px 20px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1><あなたの名前></h1>
-    <p><自分を一言で説明する文章を書く></p>
-    <h2>このサイトについて</h2>
-  <ul>
-    <li><a href="about.html">自己紹介</a></li>
-    <li><a href="works.html">作品</a></li>
-  </ul>
+
+    <div class="container">
+        <h1><あなたの名前></h1>
+        <p class="subtitle"><自分を一言で説明する文章を書く></p>
+
+        <h2>このサイトについて</h2>
+        <ul>
+            <li><a href="about.html">自己紹介</a></li>
+            <li><a href="works.html">作品</a></li>
+        </ul>
+    </div>
 
 </body>
 </html>
